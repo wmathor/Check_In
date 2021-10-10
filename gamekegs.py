@@ -21,7 +21,7 @@ def save_img(src):
         f.write(img.content)
         f.close()
 
-def gamekegs():
+def gamekegs(driver):
     try:
         
         driver.get("https://gamekegs.com/login")

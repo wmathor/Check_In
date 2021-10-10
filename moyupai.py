@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 username = "mathor" # 登录账号
 password = "w123456" # 登录密码
 
-def moyupai():
+def moyupai(driver):
     try:
         
         driver.get("https://pwl.icu/login")

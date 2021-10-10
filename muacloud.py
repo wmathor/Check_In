@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 username = "739616037@qq.com" # 登录账号
 password = "w739616037" # 登录密码
 
-def muacloud():
+def muacloud(driver):
     try:
 
         driver.get("https://muacloud.cloud/auth/login")
