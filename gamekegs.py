@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from PIL import Image
-from moyupai import *
 
 username = "wmathor@163.com" # 登录账号
 password = "w739616037" # 登录密码
@@ -24,11 +23,10 @@ def save_img(src):
 
 def gamekegs():
     try:
-        chromedriver = "/usr/bin/chromedriver"
-        os.environ["webdriver.chrome.driver"] = chromedriver
-        driver = webdriver.Chrome(executable_path=chromedriver)
+        
         driver.get("https://gamekegs.com/login")
         driver.maximize_window()
+        print(driver.title)
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
 
@@ -52,5 +50,4 @@ def gamekegs():
 
     finally:
         driver.quit()
-        moyupai()
-        # pass
+        return 0
