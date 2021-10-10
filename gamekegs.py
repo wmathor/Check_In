@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from PIL import Image
+from muacloud import *
 
 username = "wmathor@163.com" # 登录账号
 password = "w739616037" # 登录密码
