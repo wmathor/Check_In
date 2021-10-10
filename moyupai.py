@@ -19,6 +19,7 @@ def moyupai(driver):
         driver.find_element_by_xpath("//*[@id='yesterday']").click()
         driver.find_element_by_xpath("//*[@id='checkIn']").click()
         time.sleep(1)
+        print(driver.title)
+        
     finally:
         driver.quit()
-        return 0

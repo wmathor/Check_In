@@ -6,7 +6,7 @@ from PIL import Image
 
 username = "wmathor@163.com" # 登录账号
 password = "w739616037" # 登录密码
-img_path = os.getcwd() + "\\1.png"
+img_path = '/user/bin' + "/1.png"
 
 def ocr(img_path):
     ocr = ddddocr.DdddOcr()
@@ -26,7 +26,6 @@ def gamekegs(driver):
         
         driver.get("https://gamekegs.com/login")
         driver.maximize_window()
-        print(driver.title)
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
 
@@ -47,7 +46,8 @@ def gamekegs(driver):
 
         driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
         time.sleep(1)
+        print(driver.title)
 
     finally:
         driver.quit()
-        return 0
+        muacloud(driver)

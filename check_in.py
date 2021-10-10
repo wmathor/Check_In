@@ -15,7 +15,4 @@ if __name__ == '__main__':
     os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chrome_options)
 
-    # three webs
     gamekegs(driver)
-    moyupai(driver)
-    muacloud(driver)
