@@ -7,7 +7,7 @@ from muacloud import *
 
 username = "wmathor@163.com" # 登录账号
 password = "w739616037" # 登录密码
-img_path = './user/bin' + "/1.png"
+img_path = os.getcwd() + "/1.png"
 
 def ocr(img_path):
     ocr = ddddocr.DdddOcr()
