@@ -12,6 +12,9 @@ def muacloud(driver):
         driver.find_element_by_xpath("//*[@id='login_submit']").click()
         time.sleep(3)
 
+        if driver.find_element_by_xpath("//*[@disabled='disabled']"): # 如果已经签到过了，就不要签到了
+            return 
+
         driver.find_element_by_xpath("//*[@id='checkin']").click()
         time.sleep(1)
 

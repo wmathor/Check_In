@@ -1,6 +1,6 @@
 from header import *
 
-username = "wmathor@163.com" # 登录账号
+username = "739616037@qq.com" # 登录账号
 password = sys.argv[1] # 登录密码
 img_path = os.getcwd() + "/1.png"
 
@@ -27,6 +27,9 @@ def gamekegs(driver):
 
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
         time.sleep(1)
+
+        if driver.find_element_by_xpath("//*[@class='usercheck active']"):# 如果已经签到过，就不要签到了
+            return
 
         propertery = driver.find_element_by_xpath("//*[@class='captcha-clk2']")
         driver.save_screenshot(img_path)
