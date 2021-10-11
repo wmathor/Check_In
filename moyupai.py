@@ -11,7 +11,6 @@ def moyupai(driver):
         driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='loginPassword']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='green']").click()
-        is_visible(driver, "//*[@id='yesterday']") # 等待接下来的元素出现
 
         driver.find_element_by_xpath("//*[@id='yesterday']").click()
         driver.find_element_by_xpath("//*[@id='checkIn']").click()

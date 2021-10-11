@@ -17,24 +17,16 @@ def gamekegs(driver):
         driver.maximize_window()
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
-
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
-        # is_visible(driver, "//*[@class='captcha-clk2']") # 等待接下来的元素出现
-        time.sleep(2)
-        
         valid = ocr(driver, "//*[@class='captcha-clk2']", img_path)
-        print(valid)
-        # driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
+        driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
+        driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        # driver.find_element_by_xpath("//*[@type='submit']").click()
-        # print(driver.title)
-        # is_visible(driver, "//*[@class='edit-avatar']") # 等待接下来的元素出现
+        if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") == []: # 如果已经签到过，就不要签到了
+            return
 
-        # if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") == []: # 如果已经签到过，就不要签到了
-        #     return
-
-        # driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
-        # print('gamekegs签到成功')
+        driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
+        print('gamekegs签到成功')
 
     finally:
         driver.quit()
