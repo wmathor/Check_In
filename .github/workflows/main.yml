@@ -37,5 +37,6 @@ jobs:
           sudo cp -p ./chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
           python ./gamekegs.py ${{ secrets.GAMEKEGS_USERNAME }} ${{ secrets.GAMEKEGS_PASSWORD }}
-          python ./muacloud.py  ${{ secrets.MUACLOUD_USERNAME }} ${{ secrets.MUACLOUD_PASSWORD }}
-          python ./moyupai.py ${{ secrets.MOYUPAI_USERNAME }} ${{ secrets.MOYUPAI_PASSWORD }}
+          python ./muacloud.py ${{ secrets.MUACLOUD_USERNAME }} ${{ secrets.MUACLOUD_PASSWORD }}
+          python ./moyupai.py  ${{ secrets.MOYUPAI_USERNAME }} ${{ secrets.MOYUPAI_PASSWORD }}
+          python ./juejin.py   ${{ secrets.JUEJIN_USERNAME }} ${{ secrets.JUEJIN_PASSWORD }}

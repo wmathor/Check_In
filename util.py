@@ -140,5 +140,4 @@ class Track(object):
         # 获取图片的缺口位置
         top, left = np.unravel_index(result.argmax(), result.shape)
         # 背景图中的图片缺口坐标位置
-        print("当前滑块的缺口位置：", (left, top, left + width, top + height))
         return left * 340 / 552
