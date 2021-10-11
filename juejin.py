@@ -37,6 +37,8 @@ def juejin(driver):
             driver.find_element_by_xpath("//*[@name='loginPhoneOrEmail']").send_keys(username)
             driver.find_element_by_xpath("//*[@name='loginPassword']").send_keys(password)
             driver.find_element_by_xpath("//*[@class='btn']").click() # 点击"登录"按钮
+
+            time.sleep(1)
             
             # 验证码处理
             Sliding_Captcha(driver)
