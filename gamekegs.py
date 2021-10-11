@@ -28,7 +28,7 @@ def gamekegs(driver):
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
         time.sleep(1)
 
-        if driver.find_element_by_xpath("//*[@class='usercheck active']"):# 如果已经签到过，就不要签到了
+        if driver.find_elements_by_xpath("//*[@class='usercheck active']") == []:# 如果已经签到过，就不要签到了
             return
 
         propertery = driver.find_element_by_xpath("//*[@class='captcha-clk2']")
