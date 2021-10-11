@@ -41,5 +41,6 @@ jobs:
           sudo cp -p ./chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
           python ./check_in.py
+          git add .
           git commit -m 'test'
           git push
