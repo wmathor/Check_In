@@ -51,6 +51,7 @@ def gamekegs(driver):
 
         driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
         time.sleep(1)
+        print('gamekegs签到成功')
 
     finally:
         driver.quit()
