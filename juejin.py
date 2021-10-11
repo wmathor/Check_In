@@ -39,6 +39,7 @@ def juejin(driver):
         # 验证码处理
         Sliding_Captcha(driver)
         driver.get("https://juejin.cn/user/center/signin")
+        sleep(2)
         print(driver.title)
         driver.find_element_by_xpath("//*[@class='signin btn']").click()
 
