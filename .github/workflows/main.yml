@@ -39,4 +39,3 @@ jobs:
           python ./gamekegs.py  ${{ secrets.GAMEKEGS_PASSWORD }}
           python ./muacloud.py  ${{ secrets.MUACLOUD_PASSWORD }}
           python ./moyupai.py ${{ secrets.MOYUPAI_PASSWORD }}
-          ls
