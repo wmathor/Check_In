@@ -34,13 +34,9 @@ jobs:
         run: pip install -r ./requirements.txt
       - name: 'Working'
         run: |
-          git config --local user.email "739616037@qq.com"
-          git config --local user.name "wmathor"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git pull
           sudo cp -p ./chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
-          python ./check_in.py
-          git add .
-          git commit -m 'test'
-          git push
+          python ./gamekegs.py  ${{ GAMEKEGS_PASSWORD }}
+          python ./muacloud.py  ${{ MUACLOUD_PASSWORD }}
+          python ./moyupai.py ${{ MOYUPAI_PASSWORD }}
+          ls
