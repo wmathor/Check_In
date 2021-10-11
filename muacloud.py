@@ -1,4 +1,4 @@
-from header import *
+from util import *
 
 username = sys.argv[1] # 登录账号
 password = sys.argv[2] # 登录密码
@@ -10,13 +10,12 @@ def muacloud(driver):
         driver.find_element_by_xpath("//*[@id='email']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@id='login_submit']").click()
-        time.sleep(3)
+        is_visible(driver, "//*[@id='kt_header_menu_wrapper']") # 等待接下来的元素出现
 
         if driver.find_elements_by_xpath("//*[@id='checkin']") == []: # 如果已经签到过了，就不要签到了
             return 
 
         driver.find_element_by_xpath("//*[@id='checkin']").click()
-        time.sleep(1)
         print('gamekegs签到成功')
 
     finally:
