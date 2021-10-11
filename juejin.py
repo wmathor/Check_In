@@ -1,8 +1,3 @@
-import time, ddddocr, requests, os
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from PIL import Image
 from util import *
 
 username = '15549457220'
@@ -33,7 +28,8 @@ def Sliding_Captcha(driver):
     
 def juejin(driver):
     try:
-        
+
+        driver.get("https://juejin.cn/")
         driver.find_element_by_xpath("//*[@class='login-button']").click() # 点击"登录"按钮
         driver.find_element_by_xpath("//*[@class='clickable']").click() # 点击"其他登录方式"
         driver.find_element_by_xpath("//*[@name='loginPhoneOrEmail']").send_keys(username)
