@@ -43,5 +43,3 @@ def ocr(drive, locator, img_path): # 验证码识别
         img_bytes = f.read()
     res = ocr.classification(img_bytes)
     return res
-
-def 
