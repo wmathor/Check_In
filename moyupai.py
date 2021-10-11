@@ -1,7 +1,7 @@
 from header import *
 
-username = "mathor" # 登录账号
-password = sys.argv[1] # 登录密码
+username = sys.argv[1] # 登录账号
+password = sys.argv[2] # 登录密码
 
 def moyupai(driver):
     try:

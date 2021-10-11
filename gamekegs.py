@@ -1,7 +1,7 @@
 from header import *
 
-username = "739616037@qq.com" # 登录账号
-password = sys.argv[1] # 登录密码
+username = sys.argv[1] # 登录账号
+password = sys.argv[2] # 登录密码
 img_path = os.getcwd() + "/1.png"
 
 def ocr(img_path):
