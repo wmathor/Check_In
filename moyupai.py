@@ -14,7 +14,7 @@ def moyupai(driver):
 
         driver.find_element_by_xpath("//*[@id='yesterday']").click()
         driver.find_element_by_xpath("//*[@id='checkIn']").click()
-        print('gamekegs签到成功')
+        print('moyupai签到成功')
         
     finally:
         driver.quit()

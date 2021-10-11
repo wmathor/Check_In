@@ -23,6 +23,7 @@ def gamekegs(driver):
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
         if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") == []: # 如果已经签到过，就不要签到了
+            print('gamekegs签到成功')
             return
 
         driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
