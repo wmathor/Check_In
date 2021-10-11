@@ -36,6 +36,19 @@ def gamekegs(driver):
         propertery = driver.find_element_by_xpath("//*[@class='captcha-clk2']")
         driver.save_screenshot(img_path)
 
+        # img = Image.open(img_path)
+        # image = img.crop((1045, 405, 1200, 445))  # 左、上、右、下
+        # image.save(img_path)
+        # valid = ocr(img_path)
+        # driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
+
+        # driver.find_element_by_xpath("//*[@type='submit']").click()
+        # time.sleep(6)
+
+        # driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
+        # time.sleep(1)
+        # print(driver.title)
+
     finally:
         driver.quit()
         # muacloud(driver)
