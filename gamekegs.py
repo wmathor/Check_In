@@ -19,8 +19,8 @@ def gamekegs(driver):
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
 
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
-        driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
-        is_visible(driver, "//*[@class='captcha-clk2']") # 等待接下来的元素出现
+        # is_visible(driver, "//*[@class='captcha-clk2']") # 等待接下来的元素出现
+        time.sleep(2)
         
         valid = ocr(driver, "//*[@class='captcha-clk2']", img_path)
         print(valid)
