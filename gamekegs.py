@@ -17,10 +17,9 @@ def save_img(src):
         f.write(img.content)
         f.close()
 
-def gamekegs():
+def gamekegs(driver):
     try:
 
-        driver = get_web_driver()
         driver.get("https://gamekegs.com/login")
         driver.maximize_window()
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
@@ -52,3 +51,7 @@ def gamekegs():
 
     finally:
         driver.quit()
+
+if __name__ == '__main__':
+    driver = get_web_driver()
+    gamekegs(driver)

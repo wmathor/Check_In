@@ -19,3 +19,7 @@ def moyupai(driver):
         
     finally:
         driver.quit()
+
+if __name__ == '__main__':
+    driver = get_web_driver()
+    moyupai(driver)
