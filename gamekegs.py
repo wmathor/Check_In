@@ -36,9 +36,9 @@ def gamekegs(driver):
         propertery = driver.find_element_by_xpath("//*[@class='captcha-clk2']")
         driver.save_screenshot(img_path)
 
-        img = Image.open(img_path)
-        image = img.crop((1045, 405, 1200, 445))  # 左、上、右、下
-        image.save(img_path)
+        # img = Image.open(img_path)
+        # image = img.crop((1045, 405, 1200, 445))  # 左、上、右、下
+        # image.save(img_path)
         valid = ocr(img_path)
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
 
