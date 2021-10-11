@@ -21,7 +21,7 @@ def gamekegs(driver):
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
         is_visible(driver, "//*[@class='captcha-clk2']") # 等待接下来的元素出现
         
-        valid = ocr(drive, "//*[@class='captcha-clk2']", img_path)
+        valid = ocr(driver, "//*[@class='captcha-clk2']", img_path)
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
 
         driver.find_element_by_xpath("//*[@type='submit']").click()
