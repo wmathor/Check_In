@@ -6,16 +6,17 @@ password = sys.argv[2] # 登录密码
 def moyupai(driver):
     try:
 
-        driver = get_web_driver()
         driver.get("https://pwl.icu/login")
         driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='loginPassword']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='green']").click()
 
-        driver.find_element_by_xpath("//*[@id='yesterday']").click()
-        driver.find_element_by_xpath("//*[@id='checkIn']").click()
-        print('moyupai签到成功')
+        time.sleep(2)
         
+        driver.find_element_by_xpath("//*[@id='yesterday']").click()
+        driver.find_element_by_xpath("//*[@style='opacity: 1;']").click()
+        print('moyupai签到成功')
+
     finally:
         driver.quit()
 
