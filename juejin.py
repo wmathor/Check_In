@@ -52,6 +52,8 @@ def juejin(driver):
                     return
             
                 driver.find_element_by_xpath("//*[@class='signin btn']").click()
+                time.sleep(2)
+                
         print("JueJin签到成功")
 
     finally:
