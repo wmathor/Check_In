@@ -4,6 +4,7 @@ username = sys.argv[1]
 password = sys.argv[2]
 
 def Sliding_Captcha(driver):
+    time.sleep(2)
     # 获取验证图片
     slide_img = driver.find_element_by_xpath("//*[@id='captcha-verify-image']")
     backgroud_img = driver.find_element_by_xpath("//*[@class='captcha_verify_img_slide react-draggable sc-VigVT ggNWOG']")
@@ -24,26 +25,23 @@ def Sliding_Captcha(driver):
         ActionChains(driver).move_by_offset(xoffset=t, yoffset=0).perform()
     # 释放鼠标
     ActionChains(driver).release(on_element=verify_div).perform()
+    time.sleep(8)
 
     
 def juejin(driver):
     try:
         flag = True
         while flag:
-            driver.maximize_window()
             driver.get("https://juejin.cn/")
             driver.find_element_by_xpath("//*[@class='login-button']").click() # 点击"登录"按钮
             driver.find_element_by_xpath("//*[@class='clickable']").click() # 点击"其他登录方式"
             driver.find_element_by_xpath("//*[@name='loginPhoneOrEmail']").send_keys(username)
             driver.find_element_by_xpath("//*[@name='loginPassword']").send_keys(password)
             driver.find_element_by_xpath("//*[@class='btn']").click() # 点击"登录"按钮
-
-            time.sleep(1)
             
             # 验证码处理
             Sliding_Captcha(driver)
 
-            time.sleep(3)
             driver.get("https://juejin.cn/user/center/signin")
             time.sleep(3)
             if '每日签到' in driver.title:
