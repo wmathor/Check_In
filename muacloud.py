@@ -1,7 +1,7 @@
 from util import *
 
-username = sys.argv[1] # 登录账号
-password = sys.argv[2] # 登录密码
+username = 'wmathor@163.com' # 登录账号
+password = 'w739616037' # 登录密码
 
 def muacloud(driver):
     try:
@@ -23,5 +23,6 @@ def muacloud(driver):
         driver.quit()
 
 if __name__ == '__main__':
-    driver = get_web_driver()
+    # driver = get_web_driver()
+    driver = webdriver.Chrome(chrome_options=chrome_options)
     muacloud(driver)
