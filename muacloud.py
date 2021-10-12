@@ -10,7 +10,7 @@ def muacloud(driver):
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@id='login_submit']").click()
 
-        time.sleep(5)
+        time.sleep(10)
 
         if driver.find_elements_by_xpath("//*[@id='checkin']") == []: # 如果已经签到过了，就不要签到了
             print('muacloud签到成功')
