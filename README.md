@@ -13,6 +13,10 @@ fork本项目后，在Settings->Secrets中新建仓库密码（New repository se
 
 ![](https://z3.ax1x.com/2021/10/12/5mKxV1.png#shadow)
 
+另外，我在Github Actions中默认配置了摸鱼派、掘金、游戏大桶、muacloud四个网站的签到脚本，但是大家不一定全部都要用，具体来说，你想签到什么网站，修改`.github/workflows/main.yml`文件即可，如下图所示
+
+![](https://z3.ax1x.com/2021/10/13/5uIr2d.png#shadow)
+
 ### 参考项目
 
 - [掘金滑动拼图验证码识别](https://github.com/shuai93/juejin)
