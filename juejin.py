@@ -32,6 +32,7 @@ def juejin(driver):
     try:
         flag = True
         while flag:
+            driver.maximize_window()
             driver.get("https://juejin.cn/")
             driver.find_element_by_xpath("//*[@class='login-button']").click() # 点击"登录"按钮
             driver.find_element_by_xpath("//*[@class='clickable']").click() # 点击"其他登录方式"
