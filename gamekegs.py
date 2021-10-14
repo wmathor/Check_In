@@ -10,32 +10,27 @@ def save_img(src):
         f.write(img.content)
         f.close()
 
-def gamekegs(driver):
+@retry(stop_max_attempt_number=5)
+def gamekegs():
     try:
+        driver = get_web_driver()
         driver.get("https://gamekegs.com/login")
         driver.find_element_by_xpath("//*[@id='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
-        
-        time.sleep(1)
 
         valid = Ocr_Captcha(driver, "//*[@class='captcha-clk2']", img_path) # 验证码识别
 
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        time.sleep(5)
-
-        if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") == []: # 如果已经签到过，就不要签到了
-            print('gamekegs签到成功')
-            return
-
-        driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
+        if driver.find_elements_by_xpath("//*[@class='usercheck active']") == []: # 如果已经签到过，就不要签到了
+            driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
         print('gamekegs签到成功')
-
+    except:
+        raise
     finally:
         driver.quit()
 
 if __name__ == '__main__':
-    driver = get_web_driver()
-    gamekegs(driver)
+    gamekegs()

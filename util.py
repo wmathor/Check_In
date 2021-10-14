@@ -1,5 +1,6 @@
 from PIL import Image
 import cv2, numpy as np
+from retrying import retry
 from selenium import webdriver
 import os, sys, time, ddddocr, requests
 from selenium.webdriver import ActionChains
@@ -18,7 +19,7 @@ def get_web_driver():
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chrome_options)
-    driver.implicitly_wait(8) # 所有的操作都可以最长等待8s
+    driver.implicitly_wait(10) # 所有的操作都可以最长等待8s
     return driver
 
 # 一直等待某元素可见，默认超时10秒
