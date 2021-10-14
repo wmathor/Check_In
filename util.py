@@ -19,10 +19,10 @@ def get_web_driver():
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chrome_options)
-    driver.implicitly_wait(10) # 所有的操作都可以最长等待8s
+    driver.implicitly_wait(10) # 所有的操作都可以最长等待10s
     return driver
 
-# 一直等待某元素可见，默认超时10秒
+# 一直等待某元素可见，默认超时10秒（此函数暂时没有使用）
 def is_visible(driver, locator, timeout=10):
     try:
         element = WebDriverWait(driver, timeout).until(EC.visibility_of_element_located((By.XPATH, locator)))

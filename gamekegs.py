@@ -24,7 +24,7 @@ def gamekegs():
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        if driver.find_elements_by_xpath("//*[@class='usercheck active']") == []: # 如果已经签到过，就不要签到了
+        if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
             driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
         print('gamekegs签到成功')
     except:
