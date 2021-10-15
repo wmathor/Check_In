@@ -10,7 +10,7 @@ def save_img(src):
         f.write(img.content)
         f.close()
 
-@retry(stop_max_attempt_number=10)
+@retry(stop_max_attempt_number=5)
 def gamekegs():
     try:
         driver = get_web_driver()

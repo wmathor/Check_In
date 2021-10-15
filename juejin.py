@@ -30,7 +30,6 @@ def Sliding_Captcha(driver):
 def juejin():
     try:
         driver = get_web_driver()
-        driver.maximize_window()
         driver.get("https://juejin.cn/")
         driver.find_element_by_xpath("//*[@class='login-button']").click() # 点击"登录"按钮
         driver.find_element_by_xpath("//*[@class='clickable']").click() # 点击"其他登录方式"
@@ -44,6 +43,7 @@ def juejin():
         driver.get("https://juejin.cn/user/center/signin")
         if  driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
             driver.find_element_by_xpath("//*[@class='signin btn']").click()
+            time.sleep(2)
             print("JueJin签到成功")   
     except:
         rasie

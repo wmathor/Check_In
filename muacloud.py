@@ -3,7 +3,7 @@ from util import *
 username = sys.argv[1] # 登录账号
 password = sys.argv[2] # 登录密码
 
-@retry(stop_max_attempt_number=10)
+@retry(stop_max_attempt_number=5)
 def muacloud():
     try:
         driver = get_web_driver()
