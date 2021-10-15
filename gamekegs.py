@@ -8,7 +8,6 @@ def save_img(src):
     img = requests.get(src)
     with open(img_path, "wb") as f:
         f.write(img.content)
-        f.close()
 
 @retry(stop_max_attempt_number=5)
 def gamekegs():
