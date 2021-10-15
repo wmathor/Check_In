@@ -10,7 +10,7 @@ def save_img(src):
         f.write(img.content)
         f.close()
 
-@retry(stop_max_attempt_number=5)
+@retry(stop_max_attempt_number=10)
 def gamekegs():
     try:
         driver = get_web_driver()
@@ -27,8 +27,6 @@ def gamekegs():
         if driver.find_elements_by_xpath("//*[@class='usercheck checkin']") != []:
             driver.find_element_by_xpath("//*[@class='usercheck checkin']").click()
             print('gamekegs签到成功')
-        else:
-            raise
     except:
         raise
     finally:
