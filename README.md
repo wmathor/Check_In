@@ -19,7 +19,7 @@ fork本项目后，在Settings->Secrets中新建仓库密码（New repository se
 
 ### v1.1 版本更新
 
-去掉代码中所有的`time.sleep()`，改为使用`driver.implicitly_wait(10)`隐式等待所有操作10s，并且通过`@retry`修饰函数，使其报错后重新执行，增加鲁棒性，避免网络波动等因素的影响导致签到失败
+去掉代码中冗余的`time.sleep()`，改为使用`driver.implicitly_wait(10)`隐式等待所有操作10s，并且通过`@retry`修饰函数，使其报错后重新执行，增加鲁棒性，避免网络波动等因素的影响导致签到失败
 
 ### 参考项目
 
