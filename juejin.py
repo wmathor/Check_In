@@ -38,8 +38,8 @@ def juejin():
         driver.find_element_by_xpath("//*[@name='loginPassword']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='btn']").click() # 点击"登录"按钮
         
-        # 验证码处理
-        Sliding_Captcha(driver)
+        time.sleep(5)
+        Sliding_Captcha(driver) # 验证码处理
 
         driver.get("https://juejin.cn/user/center/signin")
         if  driver.find_elements_by_xpath("//*[@class='signin btn']") != []:

@@ -19,6 +19,7 @@ def gamekegs():
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='captcha-clk2']").click() # 点击验证码
 
+        time.sleep(5)
         valid = Ocr_Captcha(driver, "//*[@class='captcha-clk2']", img_path) # 验证码识别
 
         driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
