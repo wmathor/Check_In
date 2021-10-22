@@ -26,7 +26,7 @@ def Sliding_Captcha(driver):
     ActionChains(driver).release(on_element=verify_div).perform()
     time.sleep(10)
 
-@retry(stop_max_attempt_number=10)
+# @retry(stop_max_attempt_number=10)
 def juejin():
     try:
         driver = get_web_driver()
@@ -37,13 +37,12 @@ def juejin():
         driver.find_element_by_xpath("//*[@name='loginPassword']").send_keys(password)
         driver.find_element_by_xpath("//*[@class='btn']").click() # 点击"登录"按钮
         
-        time.sleep(5)
         Sliding_Captcha(driver) # 验证码处理
 
         driver.get("https://juejin.cn/user/center/signin")
+        time.sleep(3)
         if  driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
             driver.find_element_by_xpath("//*[@class='signin btn']").click()
-            time.sleep(2)
             print("JueJin签到成功")
     except:
         rasie

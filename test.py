@@ -7,7 +7,7 @@ img_path = os.getcwd() + "/1.png"
 # @retry(stop_max_attempt_number=5)
 def moyupai():
     try:
-        driver = driver = webdriver.Chrome()
+        driver = webdriver.Chrome()
         driver.implicitly_wait(10)
         driver.get("https://pwl.icu/login")
         driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username)
