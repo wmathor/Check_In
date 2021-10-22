@@ -40,6 +40,7 @@ def juejin():
         Sliding_Captcha(driver) # 验证码处理
 
         driver.find_element_by_xpath("//*[@class='btn signin-btn']").click()
+        print(driver.title)
         if  driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
             driver.find_element_by_xpath("//*[@class='signin btn']").click()
             print("JueJin签到成功")
