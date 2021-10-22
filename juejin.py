@@ -45,7 +45,7 @@ def juejin():
             time.sleep(2)
             print("JueJin签到成功")
     except:
-        rasie
+        raise
     finally:
         driver.quit()
 
