@@ -41,8 +41,11 @@ def juejin():
 
         driver.find_element_by_xpath("//*[@class='btn signin-btn']").click()
         time.sleep(3)
-        driver.find_element_by_xpath("//*[@class='signin btn']").click()
-        print("JueJin签到成功")
+        print(driver.title)
+        print(driver.find_element_by_xpath("//*[@class='user-name']").text)
+        if  driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
+            driver.find_element_by_xpath("//*[@class='signin btn']").click()
+            print("JueJin签到成功")
     except:
         rasie
     finally:
