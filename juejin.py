@@ -41,6 +41,8 @@ def juejin():
         if driver.find_elements_by_xpath("//*[@class='btn signin-btn']") != []:
             button = driver.find_element_by_xpath("//*[@class='btn signin-btn']")
             driver.execute_script("arguments[0].click();", button)
+            time.sleep(2)
+            print(driver.find_element_by_xpath("//*[@class='user-name']").text)
             if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
                 driver.find_element_by_xpath("//*[@class='signin btn']").click()
                 time.sleep(2)
