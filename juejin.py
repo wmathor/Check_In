@@ -38,15 +38,12 @@ def juejin():
         
         Sliding_Captcha(driver) # 验证码处理
 
-        if driver.find_elements_by_xpath("//*[@class='btn signin-btn']") != []:
-            button = driver.find_element_by_xpath("//*[@class='btn signin-btn']")
-            driver.execute_script("arguments[0].click();", button)
-            time.sleep(2)
+        driver.get("https://juejin.cn/user/center/signin")
+        if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
             print(driver.title)
-            if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
-                driver.find_element_by_xpath("//*[@class='signin btn']").click()
-                time.sleep(2)
-                print("JueJin签到成功")
+            driver.find_element_by_xpath("//*[@class='signin btn']").click()
+            time.sleep(2)
+            print("JueJin签到成功")
     except:
         raise
     finally:
