@@ -25,9 +25,6 @@ def Sliding_Captcha(driver):
     # 释放鼠标
     ActionChains(driver).release(on_element=verify_div).perform()
 
-def click(driver, xpath: str):
-    
-
 @retry(stop_max_attempt_number=5)
 def juejin():
     try:
