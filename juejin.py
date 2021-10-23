@@ -26,8 +26,7 @@ def Sliding_Captcha(driver):
     ActionChains(driver).release(on_element=verify_div).perform()
 
 def click(driver, xpath: str):
-    button = driver.find_element_by_xpath(xpath)
-    driver.execute_script("arguments[0].click();", button)
+    
 
 @retry(stop_max_attempt_number=5)
 def juejin():
@@ -43,9 +42,10 @@ def juejin():
         Sliding_Captcha(driver) # 验证码处理
 
         if driver.find_elements_by_xpath("//*[@class='btn signin-btn']") != []:
-            click(driver, "//*[@class='btn signin-btn']")
+            button = driver.find_element_by_xpath("//*[@class='btn signin-btn']")
+            driver.execute_script("arguments[0].click();", button)
             if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
-                click(driver, "//*[@class='signin btn']")
+                driver.find_element_by_xpath("//*[@class='signin btn']").click()
                 time.sleep(2)
                 print("JueJin签到成功")
     except:
