@@ -26,7 +26,7 @@ def Sliding_Captcha(driver):
     ActionChains(driver).release(on_element=verify_div).perform()
     time.sleep(10)
 
-@retry(stop_max_attempt_number=10)
+@retry(stop_max_attempt_number=5)
 def juejin():
     try:
         driver = get_web_driver()
@@ -40,7 +40,7 @@ def juejin():
         Sliding_Captcha(driver) # 验证码处理
 
         if driver.find_elements_by_xpath("//*[@class='btn signin-btn']") != []:
-            driver.find_element_by_xpath("//*[@class='btn signin-btn']").click()
+            driver.execute_script("arguments[0].click();", driver.find_element_by_class_selector('btn signin-btn'))
             if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
                 driver.find_element_by_xpath("//*[@class='signin btn']").click()
                 time.sleep(2)
