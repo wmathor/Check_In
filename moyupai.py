@@ -24,8 +24,8 @@ def moyupai():
         driver.find_element_by_xpath("//*[@id='checkIn']").click()
 
         valid = Ocr_Captcha(driver, "//*[@id='registerCaptchaImg']", img_path) # 验证码识别
+        print(valid)
         if valid != '':
-            print(valid)
             driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
             driver.find_element_by_xpath("//*[@onclick='submitCheckIn()']").click()
             print('moyupai签到成功')
