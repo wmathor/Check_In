@@ -24,6 +24,7 @@ def Sliding_Captcha(driver):
         ActionChains(driver).move_by_offset(xoffset=t, yoffset=0).perform()
     # 释放鼠标
     ActionChains(driver).release(on_element=verify_div).perform()
+    time.sleep(10)
 
 @retry(stop_max_attempt_number=5)
 def juejin():
