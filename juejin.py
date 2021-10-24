@@ -29,7 +29,8 @@ def Sliding_Captcha(driver):
 @retry(stop_max_attempt_number=5)
 def juejin():
     try:
-        driver = get_web_driver()
+        driver = webdriver.Chrome()
+        driver.implicitly_wait(10) # 所有的操作都可以最长等待10s
         driver.get("https://juejin.cn/")
         driver.find_element_by_xpath("//*[@class='login-button']").click() # 点击"登录"按钮
         driver.find_element_by_xpath("//*[@class='clickable']").click() # 点击"其他登录方式"
@@ -40,6 +41,7 @@ def juejin():
         Sliding_Captcha(driver) # 验证码处理
 
         driver.get("https://juejin.cn/user/center/signin")
+        time.sleep(2)
         if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
             print(driver.title)
             driver.find_element_by_xpath("//*[@class='signin btn']").click()
