@@ -40,3 +40,4 @@ jobs:
           python ./muacloud.py ${{ secrets.MUACLOUD_USERNAME }} ${{ secrets.MUACLOUD_PASSWORD }}
           python ./moyupai.py  ${{ secrets.MOYUPAI_USERNAME }} ${{ secrets.MOYUPAI_PASSWORD }}
           python ./juejin.py   ${{ secrets.JUEJIN_USERNAME }} ${{ secrets.JUEJIN_PASSWORD }}
+          python ./91.py       ${{ secrets.WII_USERNAME}} ${{secrets.WII_PASSWORD}}
