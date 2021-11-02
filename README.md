@@ -5,6 +5,7 @@
 - muacloud.py 保存了[muacloud](https://muacloud.cloud/)网站自动签到脚本
 - gamekegs.py 保存了[gamekegs](https://gamekegs.com/)网站自动签到脚本
 - juejin.py 保存了[掘金](https://juejin.cn/)网站自动签到脚本
+- 91.py保存了[91wii](https://www.91wii.com/)网站自动签到脚本
 
 ### 使用方法
 
