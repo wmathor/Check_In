@@ -8,27 +8,25 @@ img_path = os.getcwd() + "/1.png"
 def moyupai():
     try:
         driver = webdriver.Chrome()
-        driver.implicitly_wait(10)
-        driver.get("https://pwl.icu/login")
-        driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username)
-        driver.find_element_by_xpath("//*[@id='loginPassword']").send_keys(password)
-        driver.find_element_by_xpath("//*[@class='green']").click() # 为了显示验证码，先点击一次登录
+        driver.get("https://www.91wii.com/forum-125-1.html")
+        a = driver.find_element_by_xpath("//*[@style='font-size: 16px']").text
+        driver.find_element_by_xpath("//*[@type='text']").send_keys(eval(a[:-4]))
+        driver.find_element_by_xpath("//*[@type='submit']").click() # 为了显示验证码，先点击一次登录
 
-        # if driver.find_elements_by_xpath("//*[@id='captchaLogin']"): # 如果需要输入验证码
-        #     driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username) # 从这开始才是真正的登录步骤
-        #     driver.find_element_by_xpath("//*[@id='loginPassword']").send_keys(password)
-        #     valid = Ocr_Captcha(driver, "//*[@class='captcha-img fn-pointer']", img_path) # 验证码识别
-        #     driver.find_element_by_xpath("//*[@id='captchaLogin']").send_keys(valid)
-        #     driver.find_element_by_xpath("//*[@class='green']").click()
-        
-        driver.find_element_by_xpath("//*[@id='yesterday']").click()
-        driver.find_element_by_xpath("//*[@id='checkIn']").click()
+        driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
+        driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
+        driver.find_element_by_xpath("//*[@type='submit']").click()
 
-        valid = Ocr_Captcha(driver, "//*[@id='registerCaptchaImg']", img_path) # 验证码识别
-        print(valid)
-        driver.find_element_by_xpath("//*[@placeholder='验证码']").send_keys(valid)
-        driver.find_element_by_xpath("//*[@onclick='submitCheckIn()']").click()
-        print('moyupai签到成功')
+        if driver.find_elements_by_xpath("//*[@style='font-size: 16px']"):
+            a = driver.find_element_by_xpath("//*[@style='font-size: 16px']").text
+            driver.find_element_by_xpath("//*[@type='text']").send_keys(eval(a[:-4]))
+            valid = Ocr_Captcha(driver, "//*[@class='captcha-clk2']", img_path) # 验证码识别
+
+        driver.find_element_by_xpath("//*[@id='dcsignin_tips']").click() # 点击'签到' 按钮
+        if driver.find_elements_by_xpath("//*[@id='emot_4']") != []:
+            driver.find_element_by_xpath("//*[@id='emot_4']").click()
+            driver.find_element_by_xpath("//*[@type='submit']").click()
+            print('91wii签到成功')
     except:
         raise
     finally:
