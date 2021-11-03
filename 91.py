@@ -20,7 +20,7 @@ def moyupai():
         if driver.find_elements_by_xpath("//*[@style='font-size: 16px']"):
             a = driver.find_element_by_xpath("//*[@style='font-size: 16px']").text
             driver.find_element_by_xpath("//*[@type='text']").send_keys(eval(a[:-4]))
-            valid = Ocr_Captcha(driver, "//*[@class='captcha-clk2']", img_path) # 验证码识别
+            # valid = Ocr_Captcha(driver, "//*[@class='captcha-clk2']", img_path) # 验证码识别
 
         driver.find_element_by_xpath("//*[@id='dcsignin_tips']").click() # 点击'签到' 按钮
         if driver.find_elements_by_xpath("//*[@id='emot_4']") != []:
