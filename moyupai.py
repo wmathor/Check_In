@@ -11,7 +11,7 @@ def moyupai():
         driver.get("https://pwl.icu/login")
         driver.find_element_by_xpath("//*[@id='nameOrEmail']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='loginPassword']").send_keys(password)
-        driver.find_element_by_xpath("//*[@class='green']").click() # 为了显示验证码，先点击一次登录
+        driver.find_element_by_xpath("//*[@class='green']").click()
 
         driver.find_element_by_xpath("//*[@id='yesterday']").click()
         driver.find_element_by_xpath("//*[@id='checkIn']").click()
