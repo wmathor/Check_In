@@ -42,7 +42,6 @@ def juejin():
         driver.get("https://juejin.cn/user/center/signin")
         time.sleep(2)
         if driver.find_elements_by_xpath("//*[@class='signin btn']") != []:
-            print(driver.title)
             driver.find_element_by_xpath("//*[@class='signin btn']").click()
             time.sleep(2)
             print("JueJin签到成功")
