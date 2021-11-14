@@ -14,7 +14,8 @@ def moyupai():
         driver.find_element_by_xpath("//*[@class='green']").click()
 
         driver.find_element_by_xpath("//*[@id='yesterday']").click()
-        driver.find_element_by_xpath("//*[@id='checkIn']").click()
+#         driver.find_element_by_xpath("//*[@id='checkIn']").click()
+        time.sleep(605)
 
         print('moyupai签到成功')
     except:
