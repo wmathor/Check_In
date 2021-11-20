@@ -7,7 +7,7 @@ img_path = os.getcwd() + "/1.png"
 @retry(stop_max_attempt_number=5)
 def v2ex():
     try:
-        driver = webdriver.Chrome()
+        driver = get_web_driver()
         driver.get("https://v2ex.com/signin")
         driver.find_element_by_xpath("//*[@placeholder='用户名或电子邮箱地址']").send_keys(username)
         driver.find_element_by_xpath("//*[@type='password']").send_keys(password) 

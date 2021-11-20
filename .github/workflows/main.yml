@@ -41,3 +41,4 @@ jobs:
           python ./juejin.py   ${{ secrets.JUEJIN_USERNAME }} ${{ secrets.JUEJIN_PASSWORD }}
           python ./91.py       ${{ secrets.WII_USERNAME}} ${{secrets.WII_PASSWORD}}
           python ./moyupai.py  ${{ secrets.MOYUPAI_USERNAME }} ${{ secrets.MOYUPAI_PASSWORD }}
+          python ./v2ex.py  ${{ secrets.V2EX_USERNAME }} ${{ secrets.V2EX_PASSWORD }}
