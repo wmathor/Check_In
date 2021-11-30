@@ -8,13 +8,13 @@ img_path = os.getcwd() + "/1.png"
 def check_in_91():
     try:
         driver = get_web_driver()
-        driver.get("https://www.91wii.com/forum-125-1.html")
+        driver.get("https://www.91tvg.com")
         driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
         if driver.find_elements_by_xpath("//*[@name='seccodeverify']"):
-            valid = Ocr_Captcha(driver, "//*[@class='vm']", img_path) # 验证码识别
+            valid = Ocr_Captcha(driver, "//*[@onclick='updateseccode('cSAooHO8W1Wn')']", img_path) # 验证码识别
             driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
             driver.find_element_by_xpath("//*[@type='submit']").click()
 
