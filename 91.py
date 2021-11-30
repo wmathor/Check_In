@@ -14,7 +14,7 @@ def check_in_91():
         driver.find_element_by_xpath("//*[@type='submit']").click()
 
         if driver.find_elements_by_xpath("//*[@name='seccodeverify']"):
-            driver.find_element_by_xpath("//*[@width='160']").click() # 点一下图片
+            time.sleep(2)
             valid = Ocr_Captcha(driver, "//*[@width='160']", img_path) # 验证码识别
             driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
             driver.find_element_by_xpath("//*[@type='submit']").click()
