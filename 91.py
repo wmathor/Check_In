@@ -17,9 +17,9 @@ def check_in_91():
             valid = Ocr_Captcha(driver, "//*[@width='160']", img_path) # 验证码识别
             driver.find_element_by_xpath("//*[@name='seccodeverify']").send_keys(valid)
             driver.find_element_by_xpath("//*[@type='submit']").click()
-            time.sleep(5)
         
-        driver.find_element_by_xpath("//*[@id='dcsignin_tips']").click() # 点击'签到' 按钮
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'dcsignin_tips'))).click()
+        # driver.find_element_by_xpath("//*[@id='dcsignin_tips']").click() # 点击'签到' 按钮
         if driver.find_elements_by_xpath("//*[@id='emot_4']") != []:
             driver.find_element_by_xpath("//*[@id='emot_4']").click()
             driver.find_element_by_xpath("//*[@type='submit']").click()
