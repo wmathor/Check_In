@@ -7,7 +7,8 @@ password = sys.argv[2] # 登录密码
 def muacloud():
     try:
         driver = get_web_driver()
-        driver.get("https://muacloud.cloud/auth/login")
+#         driver.get("https://muacloud.cloud/auth/login")
+        driver.get("http://subyyds.xyz/user")
         driver.find_element_by_xpath("//*[@id='email']").send_keys(username)
         driver.find_element_by_xpath("//*[@id='password']").send_keys(password)
         driver.find_element_by_xpath("//*[@id='login_submit']").click()
