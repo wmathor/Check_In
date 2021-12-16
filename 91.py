@@ -12,9 +12,10 @@ def check_in_91():
         if driver.find_elements_by_xpath("//*[@style='font-size: 16px']"):
             a = driver.find_element_by_xpath("//*[@style='font-size: 16px']").text
             driver.find_element_by_xpath("//*[@type='text']").send_keys(eval(a[:-4]))
-        driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
-        driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
-        driver.find_element_by_xpath("//*[@type='submit']").click()
+        if driver.find_elements_by_xpath("//*[@name='username']"):
+            driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
+            driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
+            driver.find_element_by_xpath("//*[@type='submit']").click()
 
         if driver.find_elements_by_xpath("//*[@name='seccodeverify']"):
             time.sleep(3)
