@@ -2,6 +2,6 @@ requests==2.26.0
 lxml==4.6.5
 selenium==3.141.0
 ddddocr==1.0.8
-numpy==1.21.0
+numpy==1.19.5
 opencv-python==4.5.3.56
 retrying==1.3.3
