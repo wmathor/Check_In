@@ -31,7 +31,9 @@ jobs:
         with:
            python-version: 3.6
       - name: 'Install requirements'
-        run: pip install -r ./requirements.txt
+        run: |
+          pip install --upgrade pip
+          pip install -r ./requirements.txt
         
       - name: Prepare chromedriver
         uses: nanasess/setup-chromedriver@v1
