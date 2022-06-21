@@ -23,6 +23,10 @@ fork本项目后，在Settings->Secrets中新建仓库密码（New repository se
 
 去掉代码中冗余的`time.sleep()`，改为使用`driver.implicitly_wait(10)`隐式等待所有操作10s，并且通过`@retry`修饰函数，使其报错后重新执行，增加鲁棒性，避免网络波动等因素的影响导致签到失败
 
+### v1.2版本更新
+
+现在不需要手动上传chromedriver，也不需要每次手动更新chromedriver，main.yaml脚本支持自动获取最新的chromedriver文件
+
 ### 参考项目
 
 - [掘金滑动拼图验证码识别](https://github.com/shuai93/juejin)
