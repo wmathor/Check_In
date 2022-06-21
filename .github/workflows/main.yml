@@ -32,6 +32,10 @@ jobs:
            python-version: 3.6
       - name: 'Install requirements'
         run: pip install -r ./requirements.txt
+        
+      - name: Prepare chromedriver
+        uses: nanasess/setup-chromedriver@v1
+        
       - name: 'Working'
         run: |
           sudo cp -p ./chromedriver /usr/bin/
