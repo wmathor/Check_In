@@ -5,7 +5,7 @@ username = sys.argv[1] # 登录账号
 password = sys.argv[2] # 登录密码
 
 @retry(stop_max_attempt_number=5)
-def muacloud():
+def hupu():
     try:
         driver = get_web_driver()
         driver.get("https://www.hupu.com/")
@@ -15,7 +15,7 @@ def muacloud():
         driver.find_element_by_xpath("//*[@id='rectBottom']").click()
         time.sleep(1)
         driver.find_element_by_xpath("//*[@class='ant-btn ant-btn-primary ant-btn-block submit-btn']").click()
-        
+        time.sleep(1)
         print(driver.find_element_by_xpath("//*[@class='userImports']").text)
     except:
         raise
@@ -23,4 +23,4 @@ def muacloud():
         driver.quit()
 
 if __name__ == '__main__':
-    muacloud()
+    hupu()
