@@ -15,8 +15,6 @@ def hupu():
         driver.find_element_by_xpath("//*[@id='rectBottom']").click()
         time.sleep(1)
         driver.find_element_by_xpath("//*[@class='ant-btn ant-btn-primary ant-btn-block submit-btn']").click()
-        time.sleep(1)
-        print(driver.find_element_by_xpath("//*[@class='userImports']").text)
     except:
         raise
     finally:
