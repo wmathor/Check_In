@@ -1,5 +1,5 @@
 # from PIL import Image
-import cv2, ddddocr
+# import cv2, ddddocr
 import numpy as np
 from retrying import retry
 from selenium import webdriver
