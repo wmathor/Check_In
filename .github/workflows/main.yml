@@ -33,6 +33,7 @@ jobs:
       - name: 'Install requirements'
         run: |
           pip install --upgrade pip
+          pip install -U wheel
           pip install -r ./requirements.txt
         
       - name: Prepare chromedriver
