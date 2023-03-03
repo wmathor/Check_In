@@ -1,8 +1,9 @@
 # from PIL import Image
+import cv2, ddddocr
 import numpy as np
 from retrying import retry
 from selenium import webdriver
-import os, sys, time, ddddocr, requests
+import os, sys, time, requests
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
