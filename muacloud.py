@@ -14,7 +14,9 @@ def muacloud():
         driver.find_element_by_xpath("//*[@id='login_submit']").click()
 
         if driver.find_elements_by_xpath("//*[@id='checkin']") != []:
-            driver.find_element_by_xpath("//*[@id='checkin']").click()
+            button = driver.find_element_by_xpath("//*[@id='checkin']")
+            driver.execute_script("arguments[0].click();", button)
+            # driver.find_element_by_xpath("//*[@id='checkin']").click()
             print('muacloud签到成功')
     except:
         raise
